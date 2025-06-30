@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 100% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 100% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 100% 17%;
+    --primary: 215 100% 17%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 215 100% 17%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 3.3% 46.1%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 215 100% 17%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 215 100% 17%;
+  }
+
+  .dark {
+    --background: 215 100% 2%;
+    --foreground: 0 0% 98%;
+    --card: 215 100% 2%;
+    --card-foreground: 0 0% 98%;
+    --popover: 215 100% 2%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 215 100% 17%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 215 100% 10%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 215 100% 10%;
+    --muted-foreground: 215 5% 65%;
+    --accent: 215 100% 10%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 215 100% 10%;
+    --input: 215 100% 10%;
+    --ring: 215 100% 17%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-card/90 backdrop-blur-md border border-border rounded-xl shadow-2xl;
+  }
+
+  .glass-panel-dark {
+    @apply bg-leoni-blue/90 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl;
+  }
+
+  .glass-button {
+    @apply bg-muted hover:bg-accent backdrop-blur-sm border border-border rounded-lg transition-all duration-200;
+  }
+
+  .tech-gradient {
+    @apply bg-gradient-to-br from-leoni-blue via-primary-600 to-leoni-accent;
+  }
+
+  .tech-gradient-light {
+    @apply bg-gradient-to-br from-blue-50 via-blue-100 to-orange-50;
+  }
+
+  .status-badge {
+    @apply px-3 py-1 rounded-full text-xs font-medium;
+  }
+}
