@@ -164,8 +164,8 @@ export async function generateAIResponse(
   userContext?: UserContext,
 ): Promise<string> {
   try {
-    // Use your API key directly
-    const apiKey = "AIzaSyCwgbd_3PNT0DSWV3b1e6PJLwkL4kyVfqw"
+    // Get API key from environment variables
+    const apiKey = process.env.GEMINI_API_KEY || "AIzaSyCwgbd_3PNT0DSWV3b1e6PJLwkL4kyVfqw"
 
     if (!apiKey) {
       return "🔧 **AI Assistant Setup Required**\n\nTo enable AI-powered support, please:\n\n1. Get a free Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey)\n2. Add it to your environment variables as `GEMINI_API_KEY`\n3. Restart the application\n\nIn the meantime, I can still help you navigate the platform and provide general IT support guidance!"
